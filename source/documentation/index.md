@@ -33,7 +33,7 @@ Trader Test simulates automated responses. It also provides an environment in wh
 
 Trader Test enables you to check that your software is fully compatible with the CTC Traders API. Using Trader Test to validate the compatibility of your software is a prerequisite to being given access to the live production environment.
 
-Trader Test is currently unavailable pending completion of the phase 5 test scenario development work. 
+Trader Test is currently unavailable pending ongoing work to complete the phase 5 test scenarios. 
 
 ## What is the CTC Traders Test Support API?
 
