@@ -27,9 +27,19 @@ When you are ready to test your software, first read and understand the [CTC Tra
 
 We strongly advise you to start testing your software for compatibility purposes as soon as possible.
 
+## What is Trader Test?
+
+Trader Test simulates automated responses. It also provides an environment in which NCTS support staff simulate the tasks done by Border Force personnel.
+
+Trader Test enables you to check that your software is fully compatible with the CTC Traders API. Using Trader Test to validate the compatibility of your software is a prerequisite to being given access to the live production environment.
+
+Trader Test is currently unavailable pending completion of the phase 5 test scenario development work. 
+
 ## What is the CTC Traders Test Support API?
 
-The CTC Traders Test Support API enables testers to inject transit movement notifications as if they have been sent by the New Computerised Transit System (NCTS) from an office of departure or an office of destination. Until automated responses to trader messages are supported in a trader test environment, the Test Support API allows for responses to be triggered manually.
+The CTC Traders Test Support API enables testers to inject transit movement notifications as if they have been sent by the New Computerised Transit System (NCTS) from an office of departure or an office of destination. Until automated responses to trader messages are supported in a Trader Test environment, the Test Support API allows for responses to be triggered manually. 
+
+**Note:** The Test Support API is not a substitute for Trader Test.
 
 Currently, you can inject IE928 messages on valid departure declarations.
 
