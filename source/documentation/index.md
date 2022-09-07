@@ -29,7 +29,7 @@ We strongly advise you to start testing your software for compatibility purposes
 
 ## What is the CTC Traders Test Support API?
 
-The CTC Traders Test Support API enables testers to inject transit movement notifications as if they have been sent by the New Computerised Transit System (NCTS) from an office of departure or an office of destination. Until automated responses to trader messages are supported in a trader test environment, the test support API allows for responses to be triggered manually.
+The CTC Traders Test Support API enables testers to inject transit movement notifications as if they have been sent by the New Computerised Transit System (NCTS) from an office of departure or an office of destination. Until automated responses to trader messages are supported in a trader test environment, the Test Support API allows for responses to be triggered manually.
 
 Currently, you can inject IE928 messages on valid departure declarations.
 
