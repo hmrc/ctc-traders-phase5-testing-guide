@@ -33,15 +33,15 @@ Trader Test simulates automated responses. It also provides an environment in wh
 
 Trader Test enables you to check that your software is fully compatible with the CTC Traders API. Using Trader Test to validate the compatibility of your software is a prerequisite to being given access to the live production environment.
 
-Trader Test is currently unavailable pending ongoing work to complete the phase 5 test scenarios. 
+Phase 5 Trader Test is currently unavailable pending ongoing work to complete the phase 5 test scenarios. 
 
-## What is the CTC Traders Test Support API?
+## What is the Test Support API?
 
-The CTC Traders Test Support API enables you to inject transit movement notifications as if they have been sent by NCTS from an office of departure or an office of destination. Until automated responses to trader messages are supported in a Trader Test environment, the Test Support API allows for responses to be triggered manually. 
+The Test Support API enables you to inject transit movement notifications as if they have been sent by NCTS from an office of departure or an office of destination. Until automated responses to trader messages are supported in a Trader Test environment, the Test Support API enables responses to be triggered manually. 
 
-**Note:** The Test Support API is not a substitute for Trader Test.
+**Note:** The Test Support API is not a substitute for Trader Test. It will be switched off as soon as Trader Test becomes available.
 
-Currently, you can inject ‘Positive Acknowledgement’ E_POS_ACK (IE928) messages on valid ‘Declaration Data’ E_DEC_DAT (IE015) messages.
+Currently, you can inject ‘Positive Acknowledgement’ E_POS_ACK (IE928) messages for valid ‘Declaration Data’ E_DEC_DAT (IE015) messages.
 
 For more information, see [CTC Traders Test Support API specification](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
 
