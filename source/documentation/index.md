@@ -43,7 +43,7 @@ The Test Support API enables you to inject transit movement notifications as if 
 
 Currently, you can inject ‘Positive Acknowledgement’ E_POS_ACK (IE928) messages for valid ‘Declaration Data’ E_DEC_DAT (IE015) messages.
 
-For more information, see [CTC Traders Test Support API specification](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
+For more information, see [CTC Traders Test Support API specification](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
 
 ## Get set up for testing
 
