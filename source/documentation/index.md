@@ -41,8 +41,6 @@ The Test Support API enables you to inject transit movement notifications as if 
 
 **Note:** The Test Support API is not a substitute for Trader Test. It will be switched off as soon as Trader Test becomes available.
 
-Currently, you can inject ‘Positive Acknowledgement’ E_POS_ACK (IE928) messages for valid ‘Declaration Data’ E_DEC_DAT (IE015) messages.
-
 For more information, see [CTC Traders Test Support API specification](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
 
 ## Get set up for testing
