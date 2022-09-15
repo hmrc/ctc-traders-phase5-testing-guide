@@ -41,6 +41,8 @@ The Test Support API enables you to inject transit movement notifications as if 
 
 **Note:** The Test Support API is not a substitute for Trader Test. It will be switched off as soon as Trader Test becomes available.
 
+Requests to the Test Support API must be made in JSON format. The Test Support API injects messages in XML format.
+
 For more information, see [CTC Traders Test Support API specification](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
 
 ## Get set up for testing
