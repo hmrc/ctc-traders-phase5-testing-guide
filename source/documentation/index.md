@@ -21,7 +21,7 @@ This is needed when testing to check your software is compatible and will work w
 
 Scroll down the page for further instructions.
 
-##Before you start
+## Before you start
 
 When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/).
 
@@ -33,15 +33,15 @@ Trader Test simulates automated responses. It also provides an environment in wh
 
 Trader Test enables you to check that your software is fully compatible with the CTC Traders API. Using Trader Test to validate the compatibility of your software is a prerequisite to being given access to the live production environment.
 
-Phase 5 Trader Test is currently unavailable pending ongoing work to complete the phase 5 test scenarios. 
+**Note:** Phase 5 Trader Test is currently unavailable pending ongoing work to complete phase 5 test scenarios. 
 
-## What is the Test Support API?
+## What is the CTC Traders Test Support API?
 
-The Test Support API enables you to inject transit movement notifications as if they have been sent by NCTS from an office of departure or an office of destination. Until automated responses to trader messages are supported in a Trader Test environment, the Test Support API enables responses to be triggered manually. 
+The CTC Traders Test Support API enables you to inject transit movement notifications as if they have been sent by the NCTS from a customs office of departure or destination. Until automated responses to trader messages are supported in a Trader Test environment, the API enables responses to be triggered manually. 
 
-**Note:** The Test Support API is not a substitute for Trader Test. It will be switched off as soon as Trader Test becomes available.
+**Note:** The CTC Traders Test Support API is not a substitute for Trader Test. It will be switched off as soon as Trader Test becomes available.
 
-You must make requests to the Test Support API in JSON format. The Test Support API injects messages in XML format.
+You must make requests to the CTC Traders Test Support API in JSON format. The API injects messages in XML format.
 
 For more information, see [CTC Traders Test Support API specification](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0).
 
@@ -50,7 +50,7 @@ For more information, see [CTC Traders Test Support API specification](/api-docu
 1. First **register** for a developer account. You can do this by following the instructions on the [Using the Developer Hub](/api-documentation/docs/using-the-hub) page.
 2. [**Sign back in**](/developer/login) to the HMRC Developer Hub.
 3. **Create an application** by going to the Create Test User API.
-4. Then **create another application** by going to the [Common Transit Convention Traders API](/api-documentation/docs/api/service/common-transit-convention-traders/1.0).
+4. Then **create another application** by going to the [CTC Traders API](/api-documentation/docs/api/service/common-transit-convention-traders/2.0).
 5. **Create a user ID and password** for either an [individual](/api-documentation/docs/api/service/api-platform-test-user/1.0#_create-a-test-user-which-is-an-individual_post_accordion) or an [organisation](/api-documentation/docs/api/service/api-platform-test-user/1.0#_create-a-test-user-which-is-an-organisation_post_accordion).
 6. **Subscribe to our Common Transit Convention Traders API** on the Developer Hub under the section 'Your Specific Applications'.
 7. **Create a Client ID and Client Secret.**
@@ -74,7 +74,7 @@ Email our Software Developer Support Team at [SDSTeam@hmrc.gov.uk](mailto:SDSTea
 
 If you have found a bug in our code, you can get in touch with our developers directly on our [Github issues page](https://github.com/hmrc/common-transit-convention-traders/issues).
 
-##Useful CTC page links
+## Useful CTC page links
 
 [CTC Traders API roadmap](/roadmaps/common-transit-convention-traders-roadmap/#phase-5)
 
