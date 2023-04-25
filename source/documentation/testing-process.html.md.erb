@@ -1,0 +1,38 @@
+---
+title: Testing process | CTC Traders API phase 5 testing guide
+weight: 2
+description: Software developers, designers, product owners or business analysts. Verify the compatibility of your software with CTC Traders API and learn how to test your application in our sandbox environment.
+---
+
+# Testing process
+
+You must test the compatibility of your software with [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) and, depending on your requirements, you should also test for push-pull notifications.
+
+## Testing your software
+
+To test your software, download the test data and test scenarios from GitHub. 
+
+**Note:** You must use test data and test scenarios for both Great Britain and Northern Ireland.
+
+You can also access cURL commands on GitHub, which will give you examples of how to connect to our API. You can use the following cURL commands to simulate:
+
+- your software application’s actions and messages
+- the actions and messages that would come back from the NCTS
+
+## Testing for push-pull notifications
+
+When testing your software, you can use our [Push Pull Notifications API](/api-documentation/docs/api/service/push-pull-notifications-api/1.0) to ensure that notifications relating to the CTC Traders API are sent to you automatically. This means that notifications from the NCTS are sent to your software in near real time.
+
+To get these automatic messages, you must:
+
+- subscribe to the Push Pull Notifications service
+- subscribe to the CTC Traders API in the sandbox environment
+- configure the notification URL in the subscription configuration section of our Developer Hub
+
+<img src="../figures/notification_url_subscription.png" alt="Notificiation URL subscription"/>
+
+To subscribe to the Push Pull Notifications service, go to our Developer Hub.
+
+<img src="../figures/push_pull_notification_switch.png" alt="Activation of pull notifications"/>
+
+**Note:** If your endpoint is hosted by Amazon Web Services (AWS), you must use either [edge-optimised custom domain names](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-edge-optimized-custom-domain-name.html) or [regional custom domain names](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html).
