@@ -110,6 +110,8 @@ Test the successful creation, submission, and acceptance of a cancellation reque
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2        | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message to notify the office of departure of decision to cancel the transit declaration. | Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. | IE009 is sent to the declarant.                              |
 
+**Note:** This scenario is affected by a timer. Please submit IE014 as soon as IE028 has been received.
+
 ##### DSGB5: Cancellation of a transit declaration after release for transit
 
 ###### <span style="font-size:16px"> Test purpose</span>
@@ -144,6 +146,8 @@ Test handling of positive control messages.
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. |                         | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br /> |
 | 2        | An officer decides to control the movement and releases it.  | Required                |                                                              | A) IE060 is sent to the declarant.<br />B) IE029 is automatically generated and sent to the declarant. |
 
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
+
 ##### DSGB7: Control by office of departure unsatisfactory
 
 ###### <span style="font-size:16px"> Test purpose</span>
@@ -160,6 +164,8 @@ Test handling of negative control messages.
 | -------- | ------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. |                         | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2        | An officer decides to control the movement and ends the movement. | Required                |                                                              | A) IE060 is sent to the declarant.<br />B) IE051 is sent to the declarant. |
+
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
 
 #### Normal
 
@@ -353,6 +359,8 @@ Test the successful creation, submission, and acceptance of a cancellation reque
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. | Use the ‘Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2        | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message to notify the office of departure of decision to cancel the transit declaration. | Use the ‘XI-GB Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. | IE009 is sent to the declarant.                              |
 
+**Note:** This scenario is affected by a timer. Please submit IE014 as soon as IE028 has been received.
+
 ##### DSXI5: Cancellation of a transit declaration after release for transit
 
 ###### <span style="font-size:16px"> Test purpose</span>
@@ -387,6 +395,8 @@ Test handling of positive control messages.
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. | Use the ‘Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2        | An officer decides to control the movement and releases it.  |                                                              | A) IE060 is sent to the declarant.<br />B) IE029 sent to the declarant. |
 
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
+
 ##### DSXI7: Control by office of departure unsatisfactory
 
 ###### <span style="font-size:16px"> Test purpose</span>
@@ -403,6 +413,8 @@ Test handling of negative control messages.
 | -------- | ------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. |                         | Use the ‘Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2        | An officer decides to control the movement and ends the movement. | Required                |                                                              | A) IE060 is sent to the declarant.<br />B) IE051 sent to the declarant. |
+
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
 
 #### Normal
 
@@ -510,6 +522,8 @@ Test handling of positive control messages.
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. |                         | Use the ‘Normal XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant.                              |
 | 2        | An officer manually accepts the declaration, controls it, and then releases the movement. | Required                |                                                              | A) IE028  is generated and sent to the declarant.<br />B) IE060 is sent to the declarant.<br />C) IE029 is sent to the declarant - movement released. |
 
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
+
 ##### DNXI7: Control by office of departure unsatisfactory
 
 ###### <span style="font-size:16px"> Test purpose</span>
@@ -526,6 +540,8 @@ Test handling of negative control messages.
 | -------- | ------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1        | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. |                         | Use the ‘Normal XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant.                              |
 | 2        | An officer manually accepts the declaration, controls it, and the ends the movement. | Required                |                                                              | A) IE028 is generated and sent to the declarant.<br />B) IE060 is sent to the declarant.<br />C) IE051 is sent to the declarant |
+
+**Note:** This scenario requires manual intervention and is affected by a timer. Please submit your request as soon as IE028 has been received.
 
 ##### DNXI8: Normal departure declaration TIR
 
