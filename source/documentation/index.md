@@ -8,7 +8,7 @@ description: Software developers, designers, product owners or business analysts
 
 Learn how to test the compatibility of your software with New Computerised Transit System phase 5 (NCTS5) and  [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0).
 
-**Important:** This document will be updated as we add more functionality to the New Computerised Transit System phase 5 (NCTS5) Trader Test environment. To learn about changes to the document as we publish them, you should monitor the changelog for the document in the [ctc-traders-phase5-testing-guide](https://github.com/hmrc/ctc-traders-phase5-testing-guide/wiki/CTC-Traders-API-phase-5-testing-guide-changelog) GitHub wiki.
+**Important:** This document will be updated as we add more functionality to the NCTS5 Trader Test environment. To learn about changes to the document as we publish them, you should monitor the changelog for the document in the [ctc-traders-phase5-testing-guide](https://github.com/hmrc/ctc-traders-phase5-testing-guide/wiki/CTC-Traders-API-phase-5-testing-guide-changelog) GitHub wiki.
 
 ## Before you start
 
