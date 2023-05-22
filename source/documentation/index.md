@@ -21,7 +21,7 @@ As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023,
 | Cycle | Description | Scope | Message fields |
 | ----- | ----------- | ----- | -------------- |
 | Assurance | Before NCTS5 goes live, you will need to check that your software is compatible with both it and CTC Traders API v2.0. This involves using predefined test scenarios and test data. | Small messages (up to 5MB) | Mandatory and optional |
-| | You will have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests.<br /><br />**Note:** The large messages functionality of CTC Traders API v2.0 will be available soon. | Large messages (5MB to 22MB | Mandatory and optional |
+| | You will have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests.<br /><br />**Note:** The large messages functionality of CTC Traders API v2.0 will be available soon. | Large messages (5MB to 22MB) | Mandatory and optional |
 | Accreditation (deferred - see note below) | Applying for production credentials for this API will involve submitting the following:<ul><li>a completed application form to our [Software Developer Support (SDS) Team](mailto:SDSTeam@hmrc.gov.uk)</li><li>test results that are less than 14 days old</li></ul><br />**Note:** You will need to submit these items by 13 October 2023 if you want to have production credentials for the API before day 1 of NCTS5 go-live. | Small messages <br /><br />Large messages (if applicable  \- functionality is not yet available)<br /><br />Transition rules (requirements not yet finalised) | Mandatory only |
 
 **Important:** Although it is currently possible to carry out assurance testing in NCTS5 Trader Test, accreditation testing in Trader Test will not be possible until later in 2023. This is because the functionality of Trader Test will be delivered incrementally, including the ability to test NCTS5 transition rules.
@@ -85,20 +85,20 @@ After NCTS5 goes live on 16 November 2023, there will be a cutover period during
 
 The transition period is the period of time during which countries may switch to operating NCTS5 at any point and will run until all countries have switched to operating NCTS5. NCTS operations are currently considered to be in the transition period.
 
-During the transition period, those countries that are operating NCTS5 must do so in transitional mode, which is equivalent to a ‘backwards compatibility’ mode. This is to ensure that messages can be exchanged between NCTS4 and NCTS5 countries, which is handled by an upgrade/downgrade convertor in the common domain, where messages are exchanged at country to country level, for example, notifying the country of destination that the movement has been released or notifying the country of departure that the movement has arrived, and so on.
+During the transition period, those countries that are operating NCTS5 must do so in transitional mode, which is equivalent to a 'backwards compatibility' mode. This is to ensure that messages can be exchanged between NCTS4 and NCTS5 countries, which is handled by an upgrade/downgrade convertor in the common domain, where messages are exchanged at country to country level. For example, notifying the country of destination that the movement has been released or notifying the country of departure that the movement has arrived, and so on.
 
 The UK’s NCTS5 service will go live during the transition period. 
 
-To ensure backwards compatibility with NCTS4 during transition, special rules and conditions have been defined to restrict/prevent usage of new data fields and some functionality until all countries are operating NCTS5. This allows downgrading of NCTS5 messages to NCTS4. These rules and conditions are defined in the [NCTS Phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/).
+To ensure backwards compatibility with NCTS4 during transition, special rules and conditions have been defined to restrict/prevent usage of new data fields and some functionality until all countries are operating NCTS5. This allows downgrading of NCTS5 messages to NCTS4.
 
-The transitional rule/conditions prefixes are as follows.
+The prefixes of these rules and conditions are as follows.
 
-| **Rule prefix** | **Description**                                              |
-| --------------- | ------------------------------------------------------------ |
-| B               | Restrictive business rules effective during transitional period. |
-| E               | Restrictive technical rules effective during transitional period. |
+| Rule prefix | Description |
+| ----------- | ----------- |
+| B | Restrictive business rules effective during transitional period. |
+| E | Restrictive technical rules effective during transitional period. |
 
-During the transition period, NCTS will observe and apply these business ([Rules B](/guides/ctc-traders-phase5-tis/documentation/rules-b.html)) and technical ([Rules E](/guides/ctc-traders-phase5-tis/documentation/rules-e.html)) rules as defined in the[ NCTS Phase 5 technical interface specification](https://developer.service.hmrc.gov.uk/guides/ctc-traders-phase5-tis/) will be applied.
+During the transition period, NCTS will observe and apply these business ([Rules B](/guides/ctc-traders-phase5-tis/documentation/rules-b.html)) and technical ([Rules E](/guides/ctc-traders-phase5-tis/documentation/rules-e.html)) rules as defined in the [NCTS Phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/).
 
 As part of your assurance and accreditation testing for NCTS5, you will need to run some predefined tests to verify how your software handles transition rules.
 
