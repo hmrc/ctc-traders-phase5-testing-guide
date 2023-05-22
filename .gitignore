@@ -30,7 +30,7 @@ public/
 .batect
 .bsp
 package-lock.json
-Gemfile.lock
+
 
 
 # Ignore .DS_store file
