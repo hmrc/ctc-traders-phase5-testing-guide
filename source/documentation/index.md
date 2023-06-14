@@ -21,8 +21,8 @@ As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023,
 | Cycle | Description | Scope | Message fields |
 | ----- | ----------- | ----- | -------------- |
 | Assurance | Before NCTS5 goes live, you will need to check that your software is compatible with both it and CTC Traders API v2.0. This involves using predefined test scenarios and test data. | Small messages (up to 5MB) | Mandatory and optional |
-| | You will have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests.<br /><br />**Note:** The large messages functionality of CTC Traders API v2.0 will be available soon. | Large messages (5MB to 22MB) | Mandatory and optional |
-| Accreditation (deferred - see note below) | Applying for production credentials for this API will involve submitting the following:<ul><li>a completed application form to our [Software Developer Support (SDS) Team](mailto:SDSTeam@hmrc.gov.uk)</li><li>test results that are less than 14 days old</li></ul><br />**Note:** You will need to submit these items by 13 October 2023 if you want to have production credentials for the API before day 1 of NCTS5 go-live. | Small messages <br /><br />Large messages (if applicable  \- functionality is not yet available)<br /><br />Transition rules (requirements not yet finalised) | Mandatory only |
+| | You have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests. | Large messages (up to 5MB - this limit will later increase to 8MB) | Mandatory and optional |
+| Accreditation (deferred - see note below) | Applying for production credentials for this API will involve submitting the following:<ul><li>a completed application form to our [Software Developer Support (SDS) Team](mailto:SDSTeam@hmrc.gov.uk)</li><li>test results that are less than 14 days old</li></ul><br />**Note:** You will need to submit these items by 13 October 2023 if you want to have production credentials for the API before day 1 of NCTS5 go-live. | Small messages <br /><br />Large messages (if applicable)<br /><br />Transition rules (requirements not yet finalised) | Mandatory only |
 
 **Important:** Although it is currently possible to carry out assurance testing in NCTS5 Trader Test, accreditation testing in Trader Test will not be possible until later in 2023. This is because the functionality of Trader Test will be delivered incrementally, including the ability to test NCTS5 transition rules.
 
@@ -48,7 +48,7 @@ For more information, see [CTC Traders Test Support API v2.0 reference](/api-doc
 
 Trader Test is a test environment that simulates both automated responses and real-life experience where NCTS support staff do the tasks of Border Force personnel. When your testing requires a manual response, NCTS support staff will perform the live manual steps of the process. This simulates and tests a full real-life journey from start to finish for you.
 
-**Note:** Currently, you can use NCTS5 Trader Test to test only small messages (up to 5MB in size) with departures process flows (as defined in this document). We will advise when arrivals, incidents, and pre-lodgements process flows are testable. We will also add large messages functionality to NCTS5 Trader Test and we will advise when that is available.
+**Note:** Currently, you can use NCTS5 Trader Test to test only small messages (up to 5MB in size) with departures process flows (as defined in this document). We will advise when arrivals, incidents, and pre-lodgements process flows are testable.
 
 ##### Accessing Trader Test
 
@@ -70,9 +70,9 @@ For information about actions that must be completed before testing, see the get
 
 ### Message sizes
 
-CTC Traders API v2.0 currently supports small messages, which are defined as messages up to 5MB in size. The API will soon also support large messages, which are defined as messages between 5MB and 22MB in size.
+CTC Traders API v2.0 supports both small (up to 5MB in size) and large (up to 5MB in size - this limit will later increase to 8MB) messages.
 
-**Note:** Because the large messages functionality of the API is not yet available, it is not currently testable in NCTS5 Trader Test. As soon as the functionality becomes available in Trader Test, we will advise you how to test it.
+**Note:** The 5MB limit for large messages is testable in NCTS5 Trader Test. We will advise you when the 8MB limit becomes testable in Trader Test.
 
 ### UK cutover from NCTS4 to NCTS5
 
