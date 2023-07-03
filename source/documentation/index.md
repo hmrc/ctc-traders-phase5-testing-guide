@@ -6,7 +6,7 @@ description: Software developers, designers, product owners or business analysts
 
 # CTC Traders API phase 5 testing guide
 
-Learn how to test the compatibility of your software with New Computerised Transit System phase 5 (NCTS5) and  [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0).
+Learn how to test the compatibility of your software with New Computerised Transit System phase 5 (NCTS5) and [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0).
 
 **Important:** This document will be updated as we add more functionality to the NCTS5 Trader Test environment. To learn about changes to the document as we publish them, you should monitor the changelog for the document in the [ctc-traders-phase5-testing-guide](https://github.com/hmrc/ctc-traders-phase5-testing-guide/wiki/CTC-Traders-API-phase-5-testing-guide-changelog) GitHub wiki.
 
@@ -48,7 +48,7 @@ For more information, see [CTC Traders Test Support API v2.0 reference](/api-doc
 
 Trader Test is a test environment that simulates both automated responses and real-life experience where NCTS support staff do the tasks of Border Force personnel. When your testing requires a manual response, NCTS support staff will perform the live manual steps of the process. This simulates and tests a full real-life journey from start to finish for you.
 
-**Note:** Currently, you can use NCTS5 Trader Test to test only small messages (up to 5MB in size) with departures process flows (as defined in this document). We will advise when arrivals, incidents, and pre-lodgements process flows are testable.
+**Note:** Currently, you can use NCTS5 Trader Test to test only small messages (up to 5MB in size) and large messages (up to 5MB - this limit will later increase to 8MB) with standard departures and pre-lodged departures process flows (as defined in this document). We will advise when arrivals and incidents process flows are testable.
 
 ##### Accessing Trader Test
 
