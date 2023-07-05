@@ -26,7 +26,7 @@ As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023,
 
 **Important:** Although it is currently possible to carry out assurance testing in NCTS5 Trader Test, accreditation testing in Trader Test will not be possible until later in 2023. This is because the functionality of Trader Test will be delivered incrementally, including the ability to test NCTS5 transition rules.
 
-If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance and accreditation testing will also need to include testing the compatibility of your software with that API. For more information, see CTC Guarantee Balance API phase 5 testing guide (pending).
+If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API. For more information, see CTC Guarantee Balance API phase 5 testing guide (pending).
 
 We strongly advise you to start testing the compatibility of your software as soon as possible.
 
