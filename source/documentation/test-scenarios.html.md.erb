@@ -40,12 +40,12 @@ NCTS support staff monitor the [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5trade
 
 ### Message sender and recipient fields
 
-When submitting departure and arrival messages in Trader Test (and ultimately to the NCTS5 service when it goes live), use the following guidelines for entering message sender and recipient details.
+When submitting departure and arrival messages in Trader Test (and ultimately the NCTS5 service when it goes live), use the following guidelines for entering message sender and recipient details.
 
 | Field | Guideline | Example |
 | ----- | --------- | --------- |
 | Message sender | We recommend that you use your enrolment EORI number. | `<messageSender>9999912345</messageSender>` |
-| Message recipient | For departure messages, you must enter `NTA` and the correct country code of the office of departure. For example, if submitting a departure message for GB to XI, enter `NTA.GB`. Alternatively, if submitting a departure message for XI to GB, enter `NTA.XI`.<br /><br />For arrival messages, you must enter `NTA` and the correct country code of the **actual** office of destination, which could be the different from the declared office of destination. For example, if submitting an arrival message for GB to XI, enter `NTA.XI`. Alternatively, if submitting an arrival message for XI to GB, enter `NTA.GB`.<br /><br />**Note:** You should disregard the format and maximum length guidelines (‘an..35‘) in the NCTS5 technical interface specification. | `<messageRecipient>NTA.GB</messageRecipient>` |
+| Message recipient | For departure messages, you must enter `NTA` and the correct country code of the office of departure. For example, if submitting a departure message for GB to XI, enter `NTA.GB`. Alternatively, if submitting a departure message for XI to GB, enter `NTA.XI`.<br /><br />For arrival messages, you must enter `NTA` and the correct country code of the **actual** office of destination, which could be different from the declared office of destination. For example, if submitting an arrival message for GB to XI, enter `NTA.XI`. Alternatively, if submitting an arrival message for XI to GB, enter `NTA.GB`.<br /><br />**Note:** You should disregard the format and maximum length guidelines (‘an..35‘) in the NCTS5 technical interface specification. | `<messageRecipient>NTA.GB</messageRecipient>` |
 
 ## Standard departures
 
@@ -73,7 +73,7 @@ Test the successful creation, submission, acceptance, and automatic release of a
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test the successful creation, submission, acceptance, and automatic release of a simplified declaration that includes safety and security data  (Transit Accompanying Document).
+Test the successful creation, submission, acceptance, and automatic release of a simplified declaration that includes safety and security data.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -179,7 +179,7 @@ Test the message exchange where a customs officer decides to control a simplifie
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test that a customs officer can cancel a simplified declaration after it has been released. 
+Test that only a customs officer can cancel a simplified declaration after it has been released. 
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -233,7 +233,7 @@ Test the successful creation, submission, and acceptance of a normal procedure d
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test the successful creation, submission, and acceptance of a normal procedure declaration that includes safety and security data (Transit Accompanying Document).
+Test the successful creation, submission, and acceptance of a normal procedure declaration that includes safety and security data.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -338,7 +338,7 @@ Test the message exchange where a customs officer decides to control a normal de
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test that a customs officer can cancel a normal departure declaration after it has been released.
+Test that only a customs officer can cancel a normal departure declaration after it has been released.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -392,7 +392,7 @@ Test the successful creation, submission, acceptance, and automatic release of a
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test the successful creation, submission, and acceptance, and automatic release of a simplified procedure declaration that includes safety and security data (Transit Accompanying Document).
+Test the successful creation, submission, and acceptance, and automatic release of a simplified procedure declaration that includes safety and security data.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -499,7 +499,7 @@ Test the message exchange where a customs officer decides to control  the simpli
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test that a customs officer can cancel a simplified declaration after it has been released. 
+Test that only a customs officer can cancel a simplified declaration after it has been released. 
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -553,7 +553,7 @@ Test the successful creation, submission, and acceptance of a normal procedure d
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-Test the successful creation, submission, and acceptance of a normal procedure declaration that includes safety and security data (Transit Accompanying Document).
+Test the successful creation, submission, and acceptance of a normal procedure declaration that includes safety and security data.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -675,7 +675,7 @@ Test the successful creation, submission, acceptance, and release of a  normal T
 
 ######  <span style="font-size:16px">Test purpose</span>
 
-Test that a customs officer can cancel a departure declaration after it has been released. 
+Test that only a customs officer can cancel a departure declaration after it has been released. 
 
 ###### <span style="font-size:16px">Process flow</span>
 
