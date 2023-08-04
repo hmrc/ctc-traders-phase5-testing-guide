@@ -1103,7 +1103,7 @@ Test that a declarant can cancel a pre-lodged normal declaration within the pres
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-To demonstrate the successful creation, submission, and acceptance of a simplified arrival and the release and write-off of the declaration.
+To demonstrate the successful creation, submission, and acceptance of a simplified arrival and the  write-off and release of the declaration.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -1135,7 +1135,7 @@ To demonstrate the rejection, amendment, and subsequent acceptance of unloading 
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. | | Use the ’Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br/ >B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 | 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Great Britain. | | Use the ‘Simplified Arrival XI-GB’ column on the ‘IE007’ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
 | 3 | Send an invalid ‘Unloading Remarks’ E_ULD_REM (IE044) message without the ‘State of seals‘ HTML tag to the office of destination. | | Use the ‘Simplified Arrival XI-GB’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. | IE057 is sent to the declarant. |
-| 4 | Send a valid ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | | |
+| 4 | Send a valid ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | Use the ‘Simplified Arrival XI-GB’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. | |
 | 5 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to release the declaration. | Required | | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |
 
 ##### ASGB3: Major discrepancies resolved
@@ -1174,7 +1174,7 @@ To demonstrate the flow of messages where major discrepancies have been found an
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland. | | Use the ’Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br/ >B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 | 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Great Britain. | | Use the ‘Simplified Arrival XI-GB’ column on the ‘IE007’ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
 | 3 | Send an ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | Use the ‘Simplified Arrival XI-GB’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. |  |
-| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to request major discrepancies and to confirm them. | Required | | A) IE025 is sent to the declarant (destination) indicating that the goods have  not been released.<br />B) IE019 is sent to the declarant (departure).<br />C) After discrepancies have been resolved, IE025 is sent to the declarant (destination) indicating that the goods cannot be released.<br />D) IE035 is sent to the declarant (departure). |
+| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to request major discrepancies and to confirm them. | Required | | A) IE025 is sent to the declarant (destination) indicating that the goods have  not been released.<br />B) IE019 is sent to the declarant (departure).<br />C) After discrepancies cannot be resolved, IE025 is sent to the declarant (destination) indicating that the goods cannot be released.<br />D) IE035 is sent to the declarant (departure). |
 
 #### Normal
 
@@ -1182,7 +1182,7 @@ To demonstrate the flow of messages where major discrepancies have been found an
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-To demonstrate the successful creation, submission, and acceptance of a normal arrival and the release of the declaration.
+To demonstrate the successful creation, submission, and acceptance of a normal arrival and the write-off and release of the declaration.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -1223,7 +1223,7 @@ To demonstrate the rejection of an arrival notification for an unreleased depart
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-To demonstrate the successful creation, submission, and acceptance of a simplified arrival and the release and write-off of the declaration.
+To demonstrate the successful creation, submission, and acceptance of a simplified arrival and the  write-off and release of the declaration.
 
 ###### <span style="font-size:16px">Process flow</span>
 
@@ -1255,7 +1255,7 @@ To demonstrate the rejection, amendment, and subsequent acceptance of unloading 
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ’Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br/ >B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 | 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Northern Ireland. | | Use the ‘Simplified Arrival GB-XI’ column on the ‘IE007’ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
 | 3 | Send an invalid ‘Unloading Remarks’ E_ULD_REM (IE044) message without the ‘State of seals‘ HTML tag to the office of destination. | | Use the ‘Simplified Arrival GB-XI’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. | IE057 is sent to the declarant. |
-| 4 | Send a valid ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | | |
+| 4 | Send a valid ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | Use the ‘Simplified Arrival GB-XI’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. | |
 | 5 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to release the declaration. | Required | | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |
 
 ##### ASXI3: Major discrepancies resolved
@@ -1294,7 +1294,7 @@ To demonstrate the flow of messages where major discrepancies have been found an
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ’Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br/ >B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 | 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Northern Ireland. | | Use the ‘Simplified Arrival GB-XI’ column on the ‘IE007’ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
 | 3 | Send an ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination. | | Use the ‘Simplified Arrival GB-XI’ column on the ‘IE044’ tab of the NCTS5 Trader Test data spreadsheet. |  |
-| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to request major discrepancies and to confirm them. | Required | | A) IE025 is sent to the declarant (destination) indicating that the goods have  not been released.<br />B) IE019 is sent to the declarant (departure).<br />C) After discrepancies have been resolved, IE025 is sent to the declarant (destination) indicating that the goods cannot be released.<br />D) IE035 is sent to the declarant (departure). |
+| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to request major discrepancies and to confirm them. | Required | | A) IE025 is sent to the declarant (destination) indicating that the goods have  not been released.<br />B) IE019 is sent to the declarant (departure).<br />C) After discrepancies cannot be resolved, IE025 is sent to the declarant (destination) indicating that the goods cannot be released.<br />D) IE035 is sent to the declarant (departure). |
 
 #### Normal
 
@@ -1302,7 +1302,7 @@ To demonstrate the flow of messages where major discrepancies have been found an
 
 ###### <span style="font-size:16px">Test purpose</span>
 
-To demonstrate the successful creation, submission, and acceptance of a normal arrival and the release of the declaration.
+To demonstrate the successful creation, submission, and acceptance of a normal arrival and the write-off and release of the declaration.
 
 ###### <span style="font-size:16px">Process flow</span>
 
