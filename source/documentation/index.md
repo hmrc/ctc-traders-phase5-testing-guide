@@ -10,7 +10,7 @@ Learn how to test the compatibility of your software with New Computerised Trans
 
 ## Before you start
 
-When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/) and [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) if you have not already done so. It is also advisable to review the [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R3_140323_v1.0.xlsx) (GitHub) so that you understand differences in message types between NCTS4 and NCTS5.
+When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/) and [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) if you have not already done so. It is also advisable to review the [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R4_080823_v1.0.xlsx) (GitHub) so that you understand differences in message types between NCTS4 and NCTS5.
 
 ### Testing cycles
 
@@ -115,7 +115,7 @@ As part of your assurance and accreditation testing for NCTS5, you will need to 
 - [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/)
 - CTC Guarantee Balance API phase 5 testing guide (pending)
 - [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/)
-- [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R3_140323_v1.0.xlsx) (GitHub)
+- [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R4_080823_v1.0.xlsx) (GitHub)
 - [Transit Manual Supplement](https://www.gov.uk/government/publications/transit-manual-supplement) - UK transit procedures (OpenDocument Text document)
 
 ## Getting help and support
