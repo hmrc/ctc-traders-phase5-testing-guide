@@ -20,18 +20,18 @@ As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023,
 | ----- | ----------- | -------------- | ----- | ----- | ----- |
 | Assurance | Before NCTS5 goes live, you will need to check that your software is compatible with both it and CTC Traders API v2.0. This involves using predefined test scenarios and test data. |  |  | Small messages (up to 5MB) | Mandatory and optional |
 | | You have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests. |  |  | Large messages (up to 5MB - this limit will later increase to 8MB) | Mandatory and optional |
-| Accreditation (2 phases) | **Phase 1: NCTS5 transition rules only**<br />This is your only opportunity to complete transition rules testing in NCTS5 Trader Test as part of your assurance and accreditation testing. <br /><br />You will not be able to receive accreditation for transition rules testing after 4 February 2024. This means that if you have not been accredited for transition rules testing by 4 February 2024, you cannot use the NCTS5 service until the final rules are in place from 2 December 2024. | 1 September 2023 | 2 February 2024 | Small messages <br /><br />Large messages (if applicable)<br /><br />Transition rules | Mandatory only |
-|  | **Phase 2: NCTS5 final rules only**<br />During phase 2, you will complete your NCTS5 final rules testing in NCTS5 Trader Test as part of your assurance and accreditation testing. | 5 February 2024 | (No end date) | Small messages <br /><br />Large messages (if applicable) | Mandatory only |
+| Production access (2 phases) | **Phase 1: NCTS5 transition rules only**<br />This is your only opportunity to complete transition rules testing in NCTS5 Trader Test as part of your assurance and production access testing. <br /><br />You will not be able to receive production access for transition rules testing after 4 February 2024. This means that if you have not been granted production access for transition rules testing by 4 February 2024, you cannot use the NCTS5 service until the final rules are in place from 2 December 2024. | 11 October 2023 | 2 February 2024 | Small messages <br /><br />Large messages (if applicable)<br /><br />Transition rules | Mandatory only |
+|  | **Phase 2: NCTS5 final rules only**<br />During phase 2, you will complete your NCTS5 final rules testing in NCTS5 Trader Test as part of your assurance and production access testing. | 5 February 2024 | (No end date) | Small messages <br /><br />Large messages (if applicable) | Mandatory only |
 
-**Note:** The phasing of accreditation testing means that you will need to make 2 applications for CTC Traders API v2.0 production credentials. For more information about this, see [Apply for production credentials](documentation/apply-for-production-credentials.html).
+**Note:** The phasing of production access testing means that you will have 2 opportunities to apply for CTC Traders API v2.0 production credentials. For more information about this, see [Apply for production credentials](documentation/apply-for-production-credentials.html).
 
-**Important:** The list of test scenarios that must be run for accreditation will be a subset of the overall list of test scenarios in this document. We will provide this list before 1 September 2023.
+**Important:** The list of test scenarios that must be run for production access testing will be a subset of the overall list of test scenarios in this document. We will provide this list before 11 October 2023.
 
 If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API. For more information, see CTC Guarantee Balance API phase 5 testing guide (pending).
 
 We strongly advise you to start testing the compatibility of your software as soon as possible.
 
-**Note:** At this time, please restrict your testing to the test scenarios in this document. HMRC cannot support tests that are not included here.
+**Note:** Please restrict your testing to the test scenarios in this document. HMRC cannot support tests that are not included here.
 
 ### Test environments
 
@@ -55,7 +55,7 @@ You can use NCTS5 Trader Test to test small messages (up to 5MB in size) and lar
 
 Before requesting access to NCTS5 Trader Test, note the following:
 
-- you have the option to use both Trader Test and the Test Support API for your assurance testing (but only Trader Test can be used for accreditation testing)
+- you have the option to use both Trader Test and the Test Support API for your assurance testing (but only Trader Test can be used for production access testing)
 - an application with its Client ID registered for Trader Test should not use the Test Support API
 - if you want to use to both Trader Test and the Test Support API, you must set up two different applications in the sandbox environment because you will need two different Client IDs
 - access is to Trader Test is based on an allow list
@@ -103,9 +103,9 @@ The prefixes of these rules and conditions are as follows.
 
 During the transition period, NCTS will observe and apply these business ([Rules B](/guides/ctc-traders-phase5-tis/documentation/rules-b.html)) and technical ([Rules E](/guides/ctc-traders-phase5-tis/documentation/rules-e.html)) rules as defined in the [NCTS Phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/).
 
-As part of your assurance and accreditation testing for NCTS5, you will need to run some predefined tests to verify how your software handles transition rules.
+As part of your assurance and production access testing for NCTS5, you will need to run some predefined tests to verify how your software handles transition rules.
 
-**Note:** You can complete transition rules testing in NCTS5 Trader Test between 1 September 2023 and 2 February 2024. You will not be able to receive accreditation for transition rules testing after 4 February 2024. For more information about transition rules testing, see [Testing cycles](#testing-cycles).
+**Note:** You can complete transition rules testing in NCTS5 Trader Test between 1 September 2023 and 2 February 2024. You will not be able to apply for production access for transition rules testing after 4 February 2024. For more information about transition rules testing, see [Testing cycles](#testing-cycles).
 
 ## Related documentation
 
