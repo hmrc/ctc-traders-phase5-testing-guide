@@ -37,14 +37,6 @@ We strongly advise you to start testing the compatibility of your software as so
 
 You must use our sandbox environment and Trader Test to test the compatibility of your software with CTC Traders API v2.0.
 
-#### Test Support API
-
-[CTC Traders Test Support API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0) enables you to inject transit movement notifications as if they have been sent by the NCTS from a customs office of departure or destination.
-
-You must make requests to the CTC Traders Test Support API in JSON format. The API injects messages in XML format.
-
-For more information, see [CTC Traders Test Support API v2.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0/oas/page).
-
 #### Trader Test
 
 Trader Test is a test environment that simulates both automated responses and real-life experience where NCTS support staff do the tasks of Border Force personnel. When your testing requires a manual response, NCTS support staff will perform the live manual steps of the process. This simulates and tests a full real-life journey from start to finish for you.
@@ -64,6 +56,18 @@ To request access to NCTS5 Trader Test, complete the following steps:
 
 1. You must email your access request to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk).
 2. In the email, you must provide the Client ID of the application that you want to use with Trader Test, and you cannot subsequently use that Client ID with the Test Support API.
+
+**Advance notice:** After 18 October 2023, if you do not already have access to the NCTS5 Trader Test environment, you will gain access to it automatically without having to request it. This is because of the withdrawal of the Test Support API (see below).
+
+#### Test Support API
+
+[CTC Traders Test Support API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0) enables you to inject transit movement notifications as if they have been sent by the NCTS from a customs office of departure or destination.
+
+You must make requests to the CTC Traders Test Support API in JSON format. The API injects messages in XML format.
+
+For more information, see [CTC Traders Test Support API v2.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0/oas/page).
+
+**Advance notice:** After 18 October 2023, you will no longer be able to use the Test Support API. This is because the API was implemented as a temporary solution to facilitate your testing while the NCTS5 Trader Test environment was being built and tested. After the API is removed, if you do not already have access to the NCTS5 Trader Test environment, you will gain access to it automatically without having to request it.
 
 ### Testing prerequisites
 
