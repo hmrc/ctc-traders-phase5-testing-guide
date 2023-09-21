@@ -43,31 +43,7 @@ Trader Test is a test environment that simulates both automated responses and re
 
 You can use NCTS5 Trader Test to test small messages (up to 5MB in size) and large messages (up to 5MB - this limit will later increase to 8MB) with standard departures process flows, pre-lodged departures process flows, and arrivals process flows (as defined in this document).
 
-##### Accessing Trader Test
-
-Before requesting access to NCTS5 Trader Test, note the following:
-
-- you have the option to use both Trader Test and the Test Support API for your assurance testing (but only Trader Test can be used for production access testing)
-- an application with its Client ID registered for Trader Test should not use the Test Support API
-- if you want to use to both Trader Test and the Test Support API, you must set up two different applications in the sandbox environment because you will need two different Client IDs
-- access is to Trader Test is based on an allow list
-
-To request access to NCTS5 Trader Test, complete the following steps:
-
-1. You must email your access request to [SDSTeam@hmrc.gov.uk](mailto:SDSTeam@hmrc.gov.uk).
-2. In the email, you must provide the Client ID of the application that you want to use with Trader Test, and you cannot subsequently use that Client ID with the Test Support API.
-
-**Advance notice:** After 18 October 2023, if you do not already have access to the NCTS5 Trader Test environment, you will gain access to it automatically without having to request it. This is because of the withdrawal of the Test Support API (see below).
-
-#### Test Support API
-
-[CTC Traders Test Support API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0) enables you to inject transit movement notifications as if they have been sent by the NCTS from a customs office of departure or destination.
-
-You must make requests to the CTC Traders Test Support API in JSON format. The API injects messages in XML format.
-
-For more information, see [CTC Traders Test Support API v2.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders-test-support/2.0/oas/page).
-
-**Advance notice:** After 18 October 2023, you will no longer be able to use the Test Support API. This is because the API was implemented as a temporary solution to facilitate your testing while the NCTS5 Trader Test environment was being built and tested. After the API is removed, if you do not already have access to the NCTS5 Trader Test environment, you will gain access to it automatically without having to request it.
+**Note:** If you have an HMRC [developer account](/developer/login) and can access our sandbox environment, you have access to the NCTS5 Trader Test environment automatically.
 
 ### Testing prerequisites
 
