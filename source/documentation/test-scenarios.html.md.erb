@@ -38,6 +38,14 @@ NCTS support staff monitor the [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5trade
 
 **Important:** You must follow the requirements and instructions for each test precisely and you must provide movement-specific information if requested.
 
+### Transition rules testing
+
+
+
+### Production access testing
+
+
+
 ### Completing transit declarations
 
 For comprehensive information about how to complete a ‘Declaration Data’ E_DEC_DAT (IE015) message for NCTS5, see [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/documentation/complete-transit-declaration.html).
@@ -73,177 +81,118 @@ For information about entering message recipient details in messages for NCTS5 t
 
 ##### DSGB1: Simplified departure declaration
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the successful creation, submission, acceptance, and automatic release of a simplified declaration.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
 
-[Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 
 ##### DSGB2: Simplified departure declaration with safety and security data
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the successful creation, submission, acceptance, and automatic release of a simplified declaration that includes safety and security data.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
 
-[Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | Use the ‘Simplified GB-XI Security’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI Security’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 
 ##### DSGB3: Simplified departure declaration - Multiple house consignment
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the successful creation, submission, acceptance, and automatic release of a simplified multiple house consignment declaration.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
 
-[Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | Use the ‘MHC Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘MHC Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
 
 ##### DSGB4: Cancellation request by the holder of the transit procedure before release for transit
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the successful creation, submission, and acceptance of a simplified declaration and subsequent cancellation request.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Cancellation request by the holder of the transit procedure before release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-request-by-the-holder-of-the-transit-procedure-before-release-for-transit)
 
-[Cancellation request by the holder of the transit procedure before release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-request-by-the-holder-of-the-transit-procedure-before-release-for-transit)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Manual Intervention | Data | Result |
-| ---- | ------ | ------------------- | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration. | | Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. |  |
-| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | Required | | IE009 is sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
+| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. |  |
+| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | IE009 is sent to the declarant. |
 
 **Note:** This scenario requires manual intervention and is affected by a timer.
 
 ##### DSGB5: Cancellation of a transit declaration after release for transit
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test that cancellation of a departure cannot be requested by the declarant sending an IE014 (Declaration Invalidation Request) message after it has been released.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Cancellation of a transit declaration after release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-of-a-transit-declaration-after-release-for-transit)
 
-[Cancellation of a transit declaration after release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-of-a-transit-declaration-after-release-for-transit)
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is sent to the declarant. |
 
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
-| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message to notify the office of departure of decision to cancel the transit declaration. | Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is sent to the declarant. |
 ##### DSGB6: Control by office of departure satisfactory
-
-###### <span style="font-size:16px">Test purpose</span>
 
 Test the message exchange where a simplified declaration has been placed under control by a customs officer prior to release.
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Control by office of departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#control-by-office-of-departure)
 
-[Control by office of departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#control-by-office-of-departure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Manual Intervention | Data | Result |
-| ---- | ------ | ------------------- | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Immediately after the IE015 submission, send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to control and release the declaration.<br /><br />**Note:** Control must happen before the automatic release timer ends (45  minutes). | Required | | A) IE060 is sent to the declarant.<br />B) IE029 is automatically generated and sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
+| 2 | Immediately after the IE015 submission, send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to control and release the declaration.<br /><br />**Note:** Control must happen before the automatic release timer ends (45  minutes). | A) IE060 is sent to the declarant.<br />B) IE029 is automatically generated and sent to the declarant. |
 
 **Note:** This scenario requires manual intervention and is affected by a timer.
 
 ##### DSGB7: Control by office of departure unsatisfactory
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the message exchange where a customs officer decides to control a simplified declaration, is not satisfied with the results of the check, and refuses to release the declaration. 
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Control by office of departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#control-by-office-of-departure)
 
-[Control by office of departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#control-by-office-of-departure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Manual Intervention | Data | Result |
-| ---- | ------ | ------------------- | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Immediately after the IE015 submission, send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to control and end the declaration.<br /><br />**Note:** Control must happen before the automatic release timer ends (45  minutes). | Required | | A) IE060 is sent to the declarant.<br />B) IE051 is sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
+| 2 | Immediately after the IE015 submission, send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to control and end the declaration.<br /><br />**Note:** Control must happen before the automatic release timer ends (45  minutes). | A) IE060 is sent to the declarant.<br />B) IE051 is sent to the declarant. |
 
 **Note:** This scenario requires manual intervention and is affected by a timer.
 
 ##### DSGB8: Cancellation of a transit declaration after release for transit by office of departure
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test that only a customs officer can cancel a simplified declaration after it has been released. 
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Cancellation of a transit declaration after release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-of-a-transit-declaration-after-release-for-transit)
 
-[Cancellation of a transit declaration after release for transit](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#cancellation-of-a-transit-declaration-after-release-for-transit)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Manual Intervention | Data | Result |
-| ---- | ------ | ------------------- | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain. | | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is sent to the declarant. |
-| 2 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to cancel the declaration. | Required | | IE009 is sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is sent to the declarant. |
+| 2 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to cancel the declaration. | IE009 is sent to the declarant. |
 
 **Note:** This scenario requires manual intervention and is affected by a timer.
 
 ##### DSGB9: Release for transit refused due to guarantee checks failure
 
-###### <span style="font-size:16px">Test purpose</span>
-
 Test the message exchange where an invalid guarantee reference number (GRN) is used and the declaration is rejected as a result of failing guarantee checks (simplified).
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Release for transit refused due to guarantee check failure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#release-for-transit-refused-due-to-guarantee-check-failure)
 
-[Release for transit refused due to guarantee check failure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#release-for-transit-refused-due-to-guarantee-check-failure)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Great Britain. | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) IE055 is sent to the declarant.<br />D) IE051 is sent to the declarant after 5 minutes. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) IE055 is sent to the declarant.<br />D) IE051 is sent to the declarant after 5 minutes. |
 
 ##### DSGB10: Simplified departures amendments
 
-###### <span style="font-size:16px">Test purpose</span>
-
 To demonstrate the successful creation, submission, acceptance, and subsequent amendment prior to release of a simplified declaration. 
 
-###### <span style="font-size:16px">Process flow</span>
+Associated process flow: [Declaration amendment accepted/rejected](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#release-for-transit-refused-for-safety-and-security-reasons)
 
-[Declaration amendment accepted/rejected](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#release-for-transit-refused-for-safety-and-security-reasons)
-
-###### <span style="font-size:16px">Test</span>
-
-| Step | Action | Data | Result |
-| ---- | ------ | ---- | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Great Britain. | Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Send a ‘Declaration Amendment‘ E_DEC_AMD (IE013) message within 45 minutes of IE015 submission to the office of departure. | Use the ‘Simplified GB-XI’ column on the ‘IE013’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE004 is sent to the declarant.<br />B) After 45 minutes, IE029 sent to the declarant. |
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
+| 2 | Send a ‘Declaration Amendment‘ E_DEC_AMD (IE013) message within 45 minutes of IE015 submission to the office of departure.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE013’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE004 is sent to the declarant.<br />B) After 45 minutes, IE029 sent to the declarant. |
 
 #### Normal
 
