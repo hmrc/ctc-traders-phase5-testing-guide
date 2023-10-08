@@ -8,13 +8,15 @@ description: Software developers, designers, product owners or business analysts
 
 Learn how to test the compatibility of your software with New Computerised Transit System phase 5 (NCTS5) and [CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0).
 
+For information about key NCTS5 dates, see [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/#ncts5-key-dates).
+
 ## Before you start
 
-When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/) and [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) if you have not already done so. It is also advisable to review the [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R4_080823_v1.0.xlsx) so that you understand differences in message types between NCTS4 and NCTS5.
+When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/) and [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) if you have not already done so. It is also advisable to review the [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R5_111023_v1.0.xlsx) so that you understand differences in message types between NCTS4 and NCTS5.
 
 ### Testing cycles
 
-As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023, you will have to complete at least 2 testing cycles prior to this.
+As part of ensuring your readiness for the go-live of the UK NCTS5 service, you will have to complete 2 testing cycles.
 
 | Cycle | Description | Start date | End date | Scope | Message fields |
 | ----- | ----------- | -------------- | ----- | ----- | ----- |
@@ -25,9 +27,7 @@ As part of ensuring your readiness for the go-live of NCTS5 on 16 November 2023,
 
 **Note:** The phasing of production access testing means that you will have 2 opportunities to apply for CTC Traders API v2.0 production credentials. For more information about this, see [Apply for production credentials](documentation/apply-for-production-credentials.html).
 
-**Important:** The list of test scenarios that must be run for production access testing will be a subset of the overall list of test scenarios in this document. We will provide this list before 11 October 2023.
-
-If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API. For more information, see CTC Guarantee Balance API phase 5 testing guide (pending).
+If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API. For more information, see [CTC Guarantee Balance API phase 5 testing guide](/guides/ctc-guarantee-balance-phase5-testing-guide/).
 
 We strongly advise you to start testing the compatibility of your software as soon as possible.
 
@@ -81,7 +81,7 @@ CTC Traders API v2.0 supports both small (up to 5MB in size) and large (up to 5M
 
 ### UK cutover from NCTS4 to NCTS5
 
-After NCTS5 goes live on 16 November 2023, there will be a cutover period during which:
+After the UK NCTS5 service goes live, there will be a cutover period during which:
 
 - the NCTS4 service will continue running only to deal with in-flight transit declarations submitted before the go-live date
 - the NCTS5 service will handle all new transit declarations submitted from the go-live date onwards
@@ -90,11 +90,7 @@ After NCTS5 goes live on 16 November 2023, there will be a cutover period during
 
 The transition period is the period of time during which countries may switch to operating NCTS5 at any point and will run until all countries have switched to operating NCTS5. NCTS operations are currently considered to be in the transition period.
 
-**Note:** The end date of the transition period is 2 December 2024. 
-
 During the transition period, those countries that are operating NCTS5 must do so in transitional mode, which is equivalent to a 'backwards compatibility' mode. This is to ensure that messages can be exchanged between NCTS4 and NCTS5 countries, which is handled by an upgrade/downgrade convertor in the common domain, where messages are exchanged at country to country level. For example, notifying the country of destination that the movement has been released or notifying the country of departure that the movement has arrived, and so on.
-
-The UK’s NCTS5 service will go live during the transition period. 
 
 To ensure backwards compatibility with NCTS4 during transition, special rules and conditions have been defined to restrict/prevent usage of new data fields and some functionality until all countries are operating NCTS5. This allows downgrading of NCTS5 messages to NCTS4.
 
@@ -109,7 +105,7 @@ During the transition period, NCTS will observe and apply these business ([Rules
 
 As part of your assurance and production access testing for NCTS5, you will need to run some predefined tests to verify how your software handles transition rules.
 
-**Note:** You can complete transition rules testing in NCTS5 Trader Test between 1 September 2023 and 2 February 2024. You will not be able to apply for production access for transition rules testing after 4 February 2024. For more information about transition rules testing, see [Testing cycles](#testing-cycles).
+**Note:** You can complete transition rules testing in NCTS5 Trader Test between 11 October 2023 and 2 February 2024. You will not be able to apply for production access for transition rules testing after 4 February 2024. For more information about transition rules testing, see [Testing cycles](#testing-cycles).
 
 ## Related documentation
 
@@ -117,9 +113,9 @@ As part of your assurance and production access testing for NCTS5, you will need
 - [CTC Traders API v2.0 reference](/api-documentation/docs/api/service/common-transit-convention-traders/2.0/oas/page)
 - [CTC Traders API v2.0 changelog](https://github.com/hmrc/common-transit-convention-traders/wiki/CTC-Traders-API-v2.0-changelog) (GitHub)
 - [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/)
-- CTC Guarantee Balance API phase 5 testing guide (pending)
+- [CTC Guarantee Balance API phase 5 testing guide](/guides/ctc-guarantee-balance-phase5-testing-guide/)
 - [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/)
-- [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R4_080823_v1.0.xlsx)
+- [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R5_111023_v1.0.xlsx)
 - [Transit Manual Supplement](https://www.gov.uk/government/publications/transit-manual-supplement) - UK transit procedures (OpenDocument Text document)
 
 ## Getting help and support

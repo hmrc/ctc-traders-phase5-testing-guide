@@ -1,0 +1,325 @@
+---
+title: NCTS5 transition mode only test scenarios | CTC Traders API phase 5 testing guide
+weight: 5
+description: Software developers, designers, product owners or business analysts. Verify the compatibility of your software with CTC Traders API and learn how to test your application in our sandbox environment.
+---
+
+# NCTS5 transition mode only test scenarios
+
+These test scenarios are designed to demonstrate the constraints of transitional conditions and technical rules when Trader Test is running in NCTS5 transition mode. Each scenario does not have any associated process flow in the [NCTS5 technical interface specification](/guides/ctc-traders-phase5-tis/).
+
+Unless otherwise stated, all scenarios refer to a single house consignment going to a single consignee.
+
+For each scenario, the relevant master reference data (see the NCTS5 Trader Test data spreadsheet in the [test pack](/guides/ctc-traders-phase5-testing-guide/documentation/test-pack.html)) is indicated along with any changes to that data that are needed to test that scenario.
+
+## Standard departures
+
+### Great Britain to Northern Ireland
+
+#### Simplified
+
+##### DSGBT1: Violation of transition rule B1895
+
+Test the implementation of transition rule [B1895](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1895).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1895)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is  sent to declarant listing violation of B1895 because UCR cannot exist at both consignment and house consignment levels. |
+
+##### DSGBT2: Violation of transition rules B1890 and B1891
+
+Test the implementation of transition rules [B1890](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1890) and [B1891](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1891).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1890,B1891)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1890 (only one departure transport means allowed) and B1891 (departure transport means cannot be used with ‘Inland mode of transport‘ set to ‘5‘). |
+
+##### DSGBT3: Violation of transition rule B1892
+
+Test the implementation of transition rule [B1892](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1892).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1892)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1892 because type of identification and identification number are required. |
+
+##### DSGBT4: Violation of transition rule B1897
+
+Test the implementation of transition rule [B1897](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1897).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1897)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1897 because nationality cannot be used during the transition period. |
+
+##### DSGBT5: Violation of transition rule B1848
+
+Test the implementation of transition rule [B1848](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1848).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1848)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1848 because ‘Country of routing of consignment‘ cannot be used during the transition period. |
+
+##### DSGBT6: Violation of transition rule E1406
+
+Test that a multiple house consignment cannot be sent during the transition period (transition rule [E1406](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1406)).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (E1406)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1406 because multiple house consignments cannot be used during the transition period. |
+
+##### DSGBT7: Violation of transition rule E1301
+
+Test the implementation of transition rule [E1301](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1301).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (E1301C)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1301 because the following cannot be used during the transition period: <br />/<span>&#42;</span>/Consignment/PreviousDocument AND /<span>&#42;</span>/Consignment/SupportingDocument AND /<span>&#42;</span>/Consignment/TransportDocument AND /<span>&#42;</span>/Consignment/AdditionalReference AND /<span>&#42;</span>/Consignment/AdditionalInformation AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignor AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignee AND /<span>&#42;</span>/Consignment/HouseConsignment/DepartureTransportMeans AND /<span>&#42;</span>/Consignment/HouseConsignment/PreviousDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/SupportingDocument AND  /<span>&#42;</span>/Consignment/HouseConsignment/TransportDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalReference AND  /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalInformation |
+
+##### DSGBT10: Violation of transition rule B1964
+
+Test the suspension of rule [R0364](/guides/ctc-traders-phase5-tis/documentation/rules-r.html#r0364) during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1964)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928  is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+
+#### Normal
+
+##### DNGBT1: Violation of transition rule B1895
+
+Test the implementation of transition rule [B1895](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1895).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (B1895)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is  sent to declarant listing violation of B1895 because UCR cannot exist at both consignment and house consignment levels. |
+
+##### DNGBT2: Violation of transition rules B1890 and B1891
+
+Test the implementation of transition rules [B1890](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1890) and [B1891](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1891).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (B1890,B1891)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1890 (only one departure transport means allowed) and B1891 (departure transport means cannot be used with ‘Inland mode of transport‘ set to ‘5‘). |
+
+##### DNGBT3: Violation of transition rule B1892
+
+Test the implementation of transition rule [B1892](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1892).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI (B1892)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1892 because type of identification and identification number are required. |
+
+##### DNGBT4: Violation of transition rule B1897
+
+Test the implementation of transition rule [B1897](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1897).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (B1897)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1897 because nationality cannot be used during the transition period. |
+
+##### DNGBT5: Violation of transition rule B1848
+
+Test the implementation of transition rule [B1848](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1848).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (B1848)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1848 because ‘Country of routing of consignment‘ cannot be used during the transition period. |
+
+##### DNGBT6: Violation of transition rule E1406
+
+Test that a multiple house consignment cannot be sent during the transition period (transition rule [E1406](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1406)).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (E1406)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1406 because multiple house consignments cannot be used during the transition period. |
+
+##### DNGBT7: Violation of transition rule E1301
+
+Test the implementation of transition rule [E1301](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1301).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI (E1301C)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1301 because the following cannot be used during the transition period: <br />/<span>&#42;</span>/Consignment/PreviousDocument AND /<span>&#42;</span>/Consignment/SupportingDocument AND /<span>&#42;</span>/Consignment/TransportDocument AND /<span>&#42;</span>/Consignment/AdditionalReference AND /<span>&#42;</span>/Consignment/AdditionalInformation AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignor AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignee AND /<span>&#42;</span>/Consignment/HouseConsignment/DepartureTransportMeans AND /<span>&#42;</span>/Consignment/HouseConsignment/PreviousDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/SupportingDocument AND  /<span>&#42;</span>/Consignment/HouseConsignment/TransportDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalReference AND  /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalInformation |
+
+### Northern Ireland to Great Britain
+
+#### Simplified
+
+##### DSXIT1: Violation of transition rule B1895
+
+Test the implementation of transition rule [B1895](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1895).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1895)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is  sent to declarant listing violation of B1895 because UCR cannot exist at both consignment and house consignment levels. |
+
+##### DSXIT2: Violation of transition rules B1890 and B1891
+
+Test the implementation of transition rules [B1890](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1890) and [B1891](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1891).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1890,B1891)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1890 (only one departure transport means allowed) and B1891 (departure transport means cannot be used with ‘Inland mode of transport‘ set to ‘5‘). |
+
+##### DSXIT3: Violation of transition rule B1892
+
+Test the implementation of transition rule [B1892](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1892).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1892)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1892 because type of identification and identification number are required. |
+
+##### DSXIT4: Violation of transition rule B1897
+
+Test the implementation of transition rule [B1897](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1897).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1897)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1897 because nationality cannot be used during the transition period. |
+
+##### DSXIT5: Violation of transition rule B1848
+
+Test the implementation of transition rule [B1848](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1848).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1848)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1848 because ‘Country of routing of consignment‘ cannot be used during the transition period. |
+
+##### DSXIT6: Violation of transition rule E1406
+
+Test that a multiple house consignment cannot be sent during the transition period (transition rule [E1406](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1406)).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (E1406)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1406 because multiple house consignments cannot be used during the transition period. |
+
+##### DSXIT7: Violation of transition rule E1301
+
+Test the implementation of transition rule [E1301](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1301).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified XI-GB (E1301C)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1301 because the following cannot be used during the transition period: <br />/<span>&#42;</span>/Consignment/PreviousDocument AND /<span>&#42;</span>/Consignment/SupportingDocument AND /<span>&#42;</span>/Consignment/TransportDocument AND /<span>&#42;</span>/Consignment/AdditionalReference AND /<span>&#42;</span>/Consignment/AdditionalInformation AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignor AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignee AND /<span>&#42;</span>/Consignment/HouseConsignment/DepartureTransportMeans AND /<span>&#42;</span>/Consignment/HouseConsignment/PreviousDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/SupportingDocument AND  /<span>&#42;</span>/Consignment/HouseConsignment/TransportDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalReference AND  /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalInformation |
+
+##### DSXIT10: Violation of transition rule B1964
+
+Test the suspension of rule [R0364](/guides/ctc-traders-phase5-tis/documentation/rules-r.html#r0364) during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1964)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928  is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+
+#### Normal
+
+##### DNXIT1: Violation of transition rule B1895
+
+Test the implementation of transition rule [B1895](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1895).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (B1895)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056 is  sent to declarant listing violation of B1895 because UCR cannot exist at both consignment and house consignment levels. |
+
+##### DNXIT2: Violation of transition rules B1890 and B1891
+
+Test the implementation of transition rules [B1890](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1890) and [B1891](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1891).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (B1890,B1891)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1890 (only one departure transport means allowed) and B1891 (departure transport means cannot be used with ‘Inland mode of transport‘ set to ‘5‘). |
+
+##### DNXIT3: Violation of transition rule B1892
+
+Test the implementation of transition rule [B1892](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1892).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (B1892)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1892 because type of identification and identification number are required. |
+
+##### DNXIT4: Violation of transition rule B1897
+
+Test the implementation of transition rule [B1897](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1897).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (B1897)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1897 because nationality cannot be used during the transition period. |
+
+##### DNXIT5: Violation of transition rule B1848
+
+Test the implementation of transition rule [B1848](/guides/ctc-traders-phase5-tis/documentation/rules-b.html#b1848).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (B1848)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of B1848 because ‘Country of routing of consignment‘ cannot be used during the transition period. |
+
+##### DNXIT6: Violation of transition rule E1406
+
+Test that a multiple house consignment cannot be sent during the transition period (transition rule [E1406](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1406)).
+
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (E1406)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1406 because multiple house consignments cannot be used during the transition period. |
+
+##### DNXIT7: Violation of transition rule E1301
+
+Test the implementation of transition rule [E1301](/guides/ctc-traders-phase5-tis/documentation/rules-e.html#e1301).
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal XI-GB (E1301C)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE056  is sent to declarant listing violation of E1301 because the following cannot be used during the transition period: <br />/<span>&#42;</span>/Consignment/PreviousDocument AND /<span>&#42;</span>/Consignment/SupportingDocument AND /<span>&#42;</span>/Consignment/TransportDocument AND /<span>&#42;</span>/Consignment/AdditionalReference AND /<span>&#42;</span>/Consignment/AdditionalInformation AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignor AND /<span>&#42;</span>/Consignment/HouseConsignment/Consignee AND /<span>&#42;</span>/Consignment/HouseConsignment/DepartureTransportMeans AND /<span>&#42;</span>/Consignment/HouseConsignment/PreviousDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/SupportingDocument AND  /<span>&#42;</span>/Consignment/HouseConsignment/TransportDocument AND    /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalReference AND  /<span>&#42;</span>/Consignment/HouseConsignment/AdditionalInformation |
+
+## Arrivals
+
+### Great Britain to Northern Ireland
+
+#### Simplified
+
+##### ASGBT1: Incident en route
+
+Test that the pre-existing arrival Incident en route functionality can continue to be used during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (D)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br>C) After 45 minutes, IE029 is  automatically generated and sent to the declarant. |
+| 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Great Britain.<br /><br />Use the ‘Simplified XI-GB (A)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
+| 3 | Send an ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination.<br /><br />Use the ‘Simplified XI-GB (U)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. |  |
+| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the movement. | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |
+
+#### Normal
+
+##### ANGBT1: Incident en route
+
+Test that the pre-existing arrival Incident en route functionality can continue to be used during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (D)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br>C) After 45 minutes, IE029 is  automatically generated and sent to the declarant. |
+| 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Great Britain.<br /><br />Use the ‘Normal XI-GB (A)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
+| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the movement. | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |
+
+### Northern Ireland to Great Britain
+
+#### Simplified
+
+##### ASXIT1: Incident en route
+
+Test that the pre-existing arrival Incident en route functionality can continue to be used during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified XI-GB (D)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br>C) After 45 minutes, IE029 is  automatically generated and sent to the declarant. |
+| 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB (A)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
+| 3 | Send an ‘Unloading Remarks’ E_ULD_REM (IE044) message to the office of destination.<br /><br />Use the ‘Simplified XI-GB (U)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. |  |
+| 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the movement. | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |
+
+#### Normal
+
+##### ANXIT1: Incident en route
+
+Test that the pre-existing arrival Incident en route functionality can continue to be used during transition.
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified XI-GB (D)‘ column on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br>C) After 45 minutes, IE029 is  automatically generated and sent to the declarant. |
+| 2 | Send an ‘Arrival Notification‘ E_ARR_NOT (IE007) message to the office of destination in Northern Ireland.<br /><br />Use the ‘Normal XI-GB (A)‘ on the ‘Transition Data‘ tab of the NCTS5 Trader Test data spreadsheet. | IE043 is sent to the declarant. |
+| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the movement. | A) IE025 is sent to the declarant (destination).<br />B) IE045 is sent to the declarant (departure). |

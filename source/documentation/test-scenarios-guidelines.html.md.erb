@@ -1,0 +1,70 @@
+---
+title: Test scenarios guidelines | CTC Traders API phase 5 testing guide
+weight: 4
+description: Software developers, designers, product owners or business analysts. Verify the compatibility of your software with CTC Traders API and learn how to test your application in our sandbox environment.
+---
+
+# Test scenarios guidelines
+
+Review the following guidelines before starting your testing.
+
+## Two sets of transit rules and conditions
+
+Rules and conditions that apply to information exchange (IE) messages as defined in the [NCTS Phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) work differently for Great Britain (GB) and Northern Ireland (XI) because of the Northern Ireland Protocol. Although Northern Ireland is not an EU member state, compliance with the requirements of the Northern Ireland Protocol means that rules and conditions should be applied in the same way as for EU member states.
+
+[CTC Traders API v2.0](/api-documentation/docs/api/service/common-transit-convention-traders/2.0) integrates with both the Great Britain and Northern Ireland versions of the NCTS test system. These operate identically to the Great Britain and Northern Ireland live versions of the NCTS system.
+
+## Transition rules testing
+
+
+
+## Production access testing
+
+
+
+## Completing transit declarations
+
+For comprehensive information about how to complete a ‘Declaration Data’ E_DEC_DAT (IE015) message for NCTS5, see [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/documentation/complete-transit-declaration.html).
+
+## Message sender and recipient guidelines
+
+There are guidelines for entering message sender and recipient details in arrivals and departures messages in the NCTS5 Trader Test environment that will also apply to the production version of the UK NCTS5 service.
+
+### Message sender
+
+When specifying the message sender of an arrival or departure message, you can enter alphanumeric format data up to 35 characters (‘an..35‘).
+
+We recommend that you should enter the EORI number of the organisation (‘the declarant‘) that is physically sending the message. Alternatively, if you do not know the EORI number of the declarant, you can use the EORI number of the transit movement or prompt for it.
+
+### Message recipient
+
+The NCTS5 Trader Test environment can handle only GB to XI movements and XI to GB movements and enforces the following rules for message recipient details.
+
+| Message type | Rule | GB to XI movements | XI to GB movements |
+| ------------ | ---- | ------------------ | ------------------ |
+| Arrival | You must enter ‘NTA‘ and the correct country code of the **actual** office of destination, which could be different from the declared office of destination. | NTA.XI | NTA.GB |
+| Departure | You must enter ‘NTA‘ and the correct country code of the office of departure. | NTA.GB | NTA.XI |
+
+For the production version of the UK NCTS5 service, these rules will be applied to transit movements originating from or arriving in GB or XI. 
+
+For information about entering message recipient details in messages for NCTS5 transit movements that involve other CTC member countries, see [NCTS5 technical interface specification](/guides/ctc-traders-phase5-tis/#message-recipient).
+
+## Manual intervention
+
+Trader Test simulates both simplified and normal procedures. Simplified procedure declarations are released automatically, but a normal procedure declaration requires a manual intervention for it to be processed and released.
+
+When you are testing a declaration that requires a manual intervention, please send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) to progress the declaration for release and include the following information in your email:
+
+- email subject must include ‘Manual Intervention’
+- email body must include:
+  - the test scenario number, for example, ‘DSGB1’
+  - the step number, for example, ‘step 3’, and action that you are expecting
+  - the Local Reference Number (LRN)
+
+NCTS support staff monitor the [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox during 9am to 5pm Mondays to Fridays and release test declarations regularly. When we release your movement, we will reply to your email to let you know. If you have not received an update about your movement request after 1 working day, please send a follow-up email to the declarant Test team mailbox.
+
+**Note:** The [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox must be used only to request manual intervention. It should not be used for general enquiries.
+
+**Note:** The automatic release period for scenarios using simplified departure procedure has been set to 45 minutes. This is to allow time for actions to be carried out where tests require manual intervention. In addition, the NCTS5 system reported time is 1 hour behind.
+
+**Important:** You must follow the requirements and instructions for each test precisely and you must provide movement-specific information if requested.
