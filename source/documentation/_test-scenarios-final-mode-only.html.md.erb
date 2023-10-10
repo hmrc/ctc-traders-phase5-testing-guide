@@ -1,0 +1,69 @@
+---
+title: NCTS5 final mode only test scenarios | CTC Traders API phase 5 testing guide
+weight: 7
+description: Software developers, designers, product owners or business analysts. Verify the compatibility of your software with CTC Traders API and learn how to test your application in our sandbox environment.
+---
+
+# NCTS5 final mode only test scenarios
+
+These test scenarios are designed to demonstrate the constraints of transitional conditions and technical rules when Trader Test is running in NCTS5 final mode. Each scenario has an associated process flow in the [NCTS5 technical interface specification](/guides/ctc-traders-phase5-tis/).
+
+Unless otherwise stated, all scenarios refer to a single house consignment going to a single consignee.
+
+For each scenario, the relevant master reference data (see the NCTS5 Trader Test data spreadsheet in the [test pack](/guides/ctc-traders-phase5-testing-guide/documentation/test-pack.html)) is indicated along with any changes to that data that are needed to test that scenario.
+
+## Standard departures
+
+### Great Britain to Northern Ireland
+
+#### Simplified
+
+##### DSGB3: Simplified departure declaration - Multiple house consignment
+
+Test the successful creation, submission, acceptance, and automatic release of a simplified multiple house consignment declaration.
+
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘MHC Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+
+#### Normal
+
+##### DNGB3: Normal departure declaration - Multiple house consignment
+
+Test the successful creation, submission, and acceptance of a normal multiple house consignment data declaration.
+
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘MHC Normal GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant. |
+| 2 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the declaration. | A) IE028 is generated and sent to the declarant.<br />B) IE029 is sent to the declarant. |
+
+### Northern Ireland to Great Britain
+
+#### Simplified
+
+##### DSXI3: Simplified departure declaration - Multiple house consignment
+
+Test the successful creation, submission, and acceptance, and automatic release of a simplified multiple house consignment declaration.
+
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘MHC Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) After 45 minutes, IE029 is automatically generated and sent to the declarant. |
+
+#### Normal
+
+##### DNXI3: Normal departure declaration - Multiple house consignment
+
+Test the successful creation, submission, and acceptance of a normal multiple house consignment declaration.
+
+Associated process flow: [Standard Departure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#standard-departure)
+
+| Step | Action | Result |
+| ---- | ------ | ------ |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘MHC Normal XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant. |
+| 2 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept and release the declaration. |A) IE028 is generated and sent to the declarant.<br />B) IE029 is sent to the declarant.|
