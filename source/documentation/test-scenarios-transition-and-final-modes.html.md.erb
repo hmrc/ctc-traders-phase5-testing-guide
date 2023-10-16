@@ -47,8 +47,7 @@ Associated process flow: [Cancellation request by the holder of the transit proc
 | Step | Action | Result |
 | ---- | ------ | ------ |
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. |  |
-| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | IE009 is sent to the declarant. |
+| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘GB-XI Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet.<br /><br />Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | IE009 is sent to the declarant. |
 
 **Note:** This scenario is affected by a timer.
 
@@ -262,8 +261,7 @@ Associated process flow: [Cancellation request by the holder of the transit proc
 | Step | Action | Result |
 | ---- | ------ | ------ |
 | 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
-| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘XI-GB Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet. |  |
-| 3 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | IE009 is sent to the declarant. |
+| 2 | Send a ‘Declaration Invalidation Request’ E_DEC_INV (IE014) message within 45 minutes of IE015 submission to notify the office of departure of decision to cancel the transit declaration.<br /><br />Use the ‘XI-GB Cancellation’ column on the ‘IE014’ tab of the NCTS5 Trader Test data spreadsheet.<br /><br />Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the cancellation request. | IE009 is sent to the declarant. |
 
 **Note:** This scenario is affected by a timer.
 
@@ -722,7 +720,7 @@ Associated process flow: [Unloading Permission Received - Unloading Remarks](/gu
 
 ##### ASGB5: Non-conformance
 
-To demonstrate the acceptance of non-conformance reported in an ‘Unloading Remarks’ E_ULD_REM (IE044) message.
+To demonstrate the acceptance of non-conformance reported in an ‘Unloading Remarks’ E_ULD_REM (IE044) message. This test is designed to highlight the difference in 'Gross mass' at 'Consignment' level, 'House consignment', and 'Consignment item' levels. It also highlights the differences in 'Description of goods' and 'Commodity code'. 
 
 Associated process flow: [Simplified procedure at destination](https://developer.service.hmrc.gov.uk/guides/ctc-traders-phase5-tis/documentation/process_flows.html#simplified-procedure-at-destination)
 
@@ -819,7 +817,7 @@ Associated process flow: [Unloading Permission Received - Unloading Remarks](/gu
 
 ##### ASXI5: Non-conformance
 
-To demonstrate the acceptance of non-conformance reported in an ‘Unloading Remarks’ E_ULD_REM (IE044) message.
+To demonstrate the acceptance of non-conformance reported in an ‘Unloading Remarks’ E_ULD_REM (IE044) message. This test is designed to highlight the difference in 'Gross mass' at 'Consignment' level, 'House consignment', and 'Consignment item' levels. It also highlights the differences in 'Description of goods' and 'Commodity code'. 
 
 Associated process flow: [Simplified procedure at destination](https://developer.service.hmrc.gov.uk/guides/ctc-traders-phase5-tis/documentation/process_flows.html#simplified-procedure-at-destination)
 
