@@ -30,7 +30,7 @@ You must use our sandbox environment and Trader Test to test the compatibility o
 
 Trader Test is a test environment that simulates both automated responses and real-life experience where NCTS support staff do the tasks of Border Force personnel. When your testing requires a manual response, NCTS support staff will perform the live manual steps of the process. This simulates and tests a full real-life journey from start to finish for you.
 
-You can use NCTS5 Trader Test to test small messages (up to 5MB in size) and large messages (up to 5MB - this limit will later increase to 8MB) with standard departures process flows, pre-lodged departures process flows, and arrivals process flows (as defined in this document).
+You can use NCTS5 Trader Test to test small messages (up to 5MB in size) and large messages (up to 8MB in size) with standard departures process flows, pre-lodged departures process flows, and arrivals process flows (as defined in this document).
 
 ##### Accessing Trader Test
 
@@ -64,9 +64,7 @@ For information about actions that must be completed before testing, see the get
 
 ### Message sizes
 
-CTC Traders API v2.0 supports both small (up to 5MB in size) and large (up to 5MB in size - this limit will later increase to 8MB) messages.
-
-**Note:** The 5MB limit for large messages is testable in NCTS5 Trader Test. We will advise you when the 8MB limit becomes testable in Trader Test.
+CTC Traders API v2.0 supports both small (up to 5MB in size) and large (up to 8MB in size) messages. Both message sizes are testable in Trader Test.
 
 ### UK cutover from NCTS4 to NCTS5
 
