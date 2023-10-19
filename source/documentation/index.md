@@ -10,17 +10,31 @@ Learn how to test the compatibility of your software with New Computerised Trans
 
 For information about key NCTS5 dates, see [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/#ncts5-key-dates).
 
+**Note:** Please restrict your testing to the test scenarios in this document. HMRC cannot support tests that are not included here.
+
 ## Before you start
 
 When you are ready to test your software, first read and understand the [CTC Traders API phase 5 service guide](/guides/ctc-traders-phase5-service-guide/) and [NCTS phase 5 technical interface specification](/guides/ctc-traders-phase5-tis/) if you have not already done so. It is also advisable to review the [NCTS phase 4-phase 5 data mapping spreadsheet](/guides/ctc-traders-phase5-tis/downloads/NCTS-P5_Datamapping_R5_111023_v1.0.xlsx) so that you understand differences in message types between NCTS4 and NCTS5.
 
 ### Testing cycles
 
-(Content about testing cycles is under review given new UK NCTS5 go-live date.)
+As part of ensuring your readiness for go-live of the UK NCTS5 service, you will have to complete at least 2 testing cycles prior to this.
 
-If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0), your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API. For more information, see [CTC Guarantee Balance API phase 5 testing guide](/guides/ctc-guarantee-balance-phase5-testing-guide/).
+| Cycle | Description | Start date | End date | Scope | Message fields |
+| ----- | ----------- | -------------- | ----- | ----- | ----- |
+| Assurance | Before go-live, you will need to check that your software is compatible with both it and CTC Traders API v2.0. This involves using predefined test scenarios and test data. |  |  | Small messages (up to 5MB) | Mandatory and optional |
+| | You have the option to send large messages to NCTS. Large message tests are based on the same test scenarios as small message tests. |  |  | Large messages (up to 8MB) | Mandatory and optional |
+| Production access (2 phases) | **Phase 1: NCTS5 transition rules only**<br />This is your only opportunity to complete transition rules testing in NCTS5 Trader Test as part of your assurance and production access testing. <br /><br />You will not be able to receive production access for transition rules testing after summer 2024. This means that if you have not been granted production access for transition rules testing by summer 2024, you cannot use the NCTS5 service until the final rules are in place (see [NCTS5 key dates](/guides/ctc-traders-phase5-tis/#ncts5-key-dates)). | 30 October 2023 | Summer 2024 | Small messages <br /><br />Large messages (if applicable)<br /><br />Transition rules | Mandatory only |
+|  | **Phase 2: NCTS5 final rules only**<br />During phase 2, you will complete your NCTS5 final rules testing in NCTS5 Trader Test as part of your assurance and production access testing. | Summer 2024 | (No end date) | Small messages <br /><br />Large messages (if applicable) | Mandatory only |
 
-**Note:** Please restrict your testing to the test scenarios in this document. HMRC cannot support tests that are not included here.
+During summer 2024, the NCTS5 Trader Test environment will move back into NCTS5 final mode after the UK NCTS5 service goes live. We will tell you the exact date of the switchover nearer the time.
+
+**Note:** The production credentials application form that you will use lists the test scenarios that must be run for production access testing. For more information about this form, see [Apply for production credentials](documentation/apply-for-production-credentials.html).
+
+If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/api/service/common-transit-convention-guarantee-balance/2.0):
+
+- your NCTS5 assurance testing will also need to include testing the compatibility of your software with that API - for more information, see [CTC Guarantee Balance API phase 5 testing guide](/guides/ctc-guarantee-balance-phase5-testing-guide/)
+- you do NOT have to apply for separate production credentials for that API - this is because production credentials for CTC Traders API v2.0 are sufficient for using the UK NCTS5 service after it goes live
 
 ### Test environments
 
