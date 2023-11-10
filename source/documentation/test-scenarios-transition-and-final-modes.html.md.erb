@@ -119,7 +119,7 @@ Associated process flow: [Declaration amendment accepted/rejected](/guides/ctc-t
 
 | Step | Action | Result |
 | ---- | ------ | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant. |
 | 2 | Send a ‘Declaration Amendment‘ E_DEC_AMD (IE013) message within 45 minutes of IE015 submission to the office of departure.<br /><br />Use the ‘Simplified GB-XI’ column on the ‘IE013’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE004 is sent to the declarant.<br />B) After 45 minutes, IE029 sent to the declarant. |
 
 #### Normal
@@ -223,7 +223,7 @@ Associated process flow: [Declaration amendment accepted/rejected](/guides/ctc-t
 
 | Step | Action | Result |
 | ---- | ------ | ------ |
-| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant. |
+| 1 | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message to an office of departure in Great Britain.<br /><br />Use the ‘Normal GB-XI’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | IE928 is sent to the declarant. |
 | 2 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to accept the declaration. | IE028 is generated and sent to the declarant. |
 | 3 | Send a ‘Declaration Amendment‘ E_DEC_AMD (IE013) message within 45 minutes of IE015 submission to the office of departure.<br /><br />Use the ‘Normal GB-XI’ column on the ‘IE013’ tab of the NCTS5 Trader Test data spreadsheet. | IE004 is sent to the declarant. |
 | 4 | Send an email to [nctsp5tradertest@hmrc.gov.uk](mailto:nctsp5tradertest@hmrc.gov.uk) mailbox to release the declaration. | IE029 sent to the declarant. |
@@ -321,8 +321,8 @@ Test the message exchange where an invalid guarantee reference number (GRN) is u
 
 Associated process flow: [Release for transit refused due to guarantee check failure](/guides/ctc-traders-phase5-tis/documentation/process_flows.html#release-for-transit-refused-due-to-guarantee-check-failure)
 
-| Step | Action | Result |
-| ---- | ------ | ------ |
+| Step | Action                                                       | Result                                                       |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1    | Send a ‘Declaration Data’ E_DEC_DAT (IE015) message with an incorrect ‘GRN‘ to an office of departure in Northern Ireland.<br /><br />Use the ‘Simplified XI-GB’ column on the ‘IE015’ tab of the NCTS5 Trader Test data spreadsheet. | A) IE928 is sent to the declarant.<br />B) IE028 is generated and sent to the declarant.<br />C) IE055 is sent to the declarant.<br />D) IE051 is sent to the declarant after 5 minutes. |
 
 ##### DSXI10: Simplified departures amendments
