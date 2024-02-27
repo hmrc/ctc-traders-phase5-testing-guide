@@ -82,8 +82,6 @@ During the transition period, NCTS will observe and apply these business ([Rules
 
 As part of your assurance and production access testing for NCTS5, you will need to run some predefined tests to verify how your software handles transition rules.
 
-**Note:** You can complete transition rules testing in NCTS5 Trader Test between 11 October 2023 and 2 February 2024. You will not be able to apply for production access for transition rules testing after 4 February 2024. For more information about transition rules testing, see [Testing cycles](#testing-cycles).
-
 ## Navigating CTC Traders API v2.0 documentation
 
 The following table lists the documents for CTC Traders API v2.0 and outlines the content and intended readers of each document.
