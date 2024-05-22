@@ -1,4 +1,3 @@
-import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin.publishingSettings
 
 val appName = "ctc-traders-phase5-testing-guide"
 
@@ -10,7 +9,7 @@ lazy val microservice = Project(appName, file("."))
     majorVersion := 0
   )
   
-  .settings(scalaVersion := "2.13.8")
+  .settings(scalaVersion := "2.13.12")
   .settings(
     resolvers += Resolver.jcenterRepo
   )
