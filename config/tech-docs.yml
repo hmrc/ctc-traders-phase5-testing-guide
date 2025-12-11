@@ -16,8 +16,9 @@ show_govuk_logo: true
 
 # Links to show on right-hand-side of header
 header_links:
-  HMRC Developer Hub: /
-  Documentation: https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub
+  HMRC Developer Hub: https://developer.service.hmrc.gov.uk/
+  Getting started: https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub
+  API documentation: https://developer.service.hmrc.gov.uk/api-documentation/docs/api
   Applications: https://developer.service.hmrc.gov.uk/developer/applications
   Support: https://developer.service.hmrc.gov.uk/developer/support
 
