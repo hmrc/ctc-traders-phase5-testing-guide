@@ -34,6 +34,8 @@ If you intend to use [CTC Guarantee Balance API v2.0](/api-documentation/docs/ap
 
 ### Test environments
 
+**Availability window**: 7am to 7pm, Monday to Friday (UK time, either GMT or BST)
+
 You must use our sandbox environment and Trader Test to test the compatibility of your software with CTC Traders API v2.1.
 
 #### Trader Test
