@@ -9,7 +9,7 @@ object AppDependencies {
     "uk.gov.hmrc" %% "bootstrap-frontend-play-30" % bootStrapPlayVersion)
 
   lazy val test: Seq[ModuleID] = Seq(
-    "org.scalatest"       %% "scalatest"              % "3.2.19"             % "test",
+    "org.scalatest"       %% "scalatest"              % "3.2.20"             % "test",
     "com.vladsch.flexmark" % "flexmark-all"           % "0.64.8"             % "test",
     "uk.gov.hmrc"         %% "bootstrap-test-play-30" % bootStrapPlayVersion % "test"
   )
